@@ -17,7 +17,14 @@ void ClearScreen()
 
 int main() {
     City *city = new City();
-    cout << *city;
+    string test = "";
+    while (true){
+
+        city->move();
+//        cout << *city;
+//        cin >> test;
+    }
+
 //    chrono:: milliseconds interval(INTERVAL);
 
 //    while (city->hasDiversity()) { //while both humans and zombies exist

@@ -5,14 +5,15 @@
 
 class Human : public Organism
 {
-
 public:
-
     Human();
     Human( City *city, int width, int height );
     virtual ~Human();
+    vector<Organism*> getTargets() override;
 
-    void move();
+
+
+    void move() override;
 };
 
 #endif

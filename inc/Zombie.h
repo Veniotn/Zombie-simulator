@@ -10,7 +10,8 @@ public:
     Zombie( City *city, int width, int height );
     virtual ~Zombie();
 
-    void move();
+    void move() override;
+    vector<Organism*> getTargets() override;
 };
 
 #endif

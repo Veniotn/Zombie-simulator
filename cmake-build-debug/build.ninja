@@ -85,6 +85,12 @@ build CMakeFiles/4_Zombies.dir/src/Organism.cpp.obj: CXX_COMPILER__4_Zombies_Deb
   OBJECT_DIR = CMakeFiles\4_Zombies.dir
   OBJECT_FILE_DIR = CMakeFiles\4_Zombies.dir\src
 
+build CMakeFiles/4_Zombies.dir/src/Empty.cpp.obj: CXX_COMPILER__4_Zombies_Debug B$:/school/Current/C++/Assignments/4_Zombies/src/Empty.cpp || cmake_object_order_depends_target_4_Zombies
+  DEP_FILE = CMakeFiles\4_Zombies.dir\src\Empty.cpp.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\4_Zombies.dir
+  OBJECT_FILE_DIR = CMakeFiles\4_Zombies.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target 4_Zombies
@@ -93,7 +99,7 @@ build CMakeFiles/4_Zombies.dir/src/Organism.cpp.obj: CXX_COMPILER__4_Zombies_Deb
 #############################################
 # Link the executable 4_Zombies.exe
 
-build 4_Zombies.exe: CXX_EXECUTABLE_LINKER__4_Zombies_Debug CMakeFiles/4_Zombies.dir/src/main.cpp.obj CMakeFiles/4_Zombies.dir/src/City.cpp.obj CMakeFiles/4_Zombies.dir/src/GameSpec.cpp.obj CMakeFiles/4_Zombies.dir/src/Human.cpp.obj CMakeFiles/4_Zombies.dir/src/Zombie.cpp.obj CMakeFiles/4_Zombies.dir/src/Organism.cpp.obj
+build 4_Zombies.exe: CXX_EXECUTABLE_LINKER__4_Zombies_Debug CMakeFiles/4_Zombies.dir/src/main.cpp.obj CMakeFiles/4_Zombies.dir/src/City.cpp.obj CMakeFiles/4_Zombies.dir/src/GameSpec.cpp.obj CMakeFiles/4_Zombies.dir/src/Human.cpp.obj CMakeFiles/4_Zombies.dir/src/Zombie.cpp.obj CMakeFiles/4_Zombies.dir/src/Organism.cpp.obj CMakeFiles/4_Zombies.dir/src/Empty.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\4_Zombies.dir
