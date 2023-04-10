@@ -45,7 +45,7 @@ CMAKE_CXX_COMPILER_AR:FILEPATH=C:/Users/nick/AppData/Local/JetBrains/Toolbox/app
 CMAKE_CXX_COMPILER_RANLIB:FILEPATH=C:/Users/nick/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/bin/mingw/bin/gcc-ranlib.exe
 
 //Flags used by the CXX compiler during all build types.
-CMAKE_CXX_FLAGS:STRING=
+CMAKE_CXX_FLAGS:STRING=-g
 
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g

@@ -14,6 +14,7 @@ Human::Human(City *city, int width, int height)
     this->width   = width;
     this->height  = height;
     this->species = HUMAN;
+    this->moved   = false;
 }
 
 Human::Human()
@@ -46,16 +47,15 @@ void Human::move()
         rowIndex = target->getYPosition();
 
         //move the human to the empty space
-        this->city->setOrganism(this, columnIndex, rowIndex);
+        city->setOrganism(this, columnIndex, rowIndex);
 
         //get original indexes
         originalColumn = this->x;
         originalRow    = this->y;
 
-        //create a new empty space object
 
         //remove the human from the old space
-        this->city->setOrganism(new Empty(this->city, originalColumn, originalRow), originalColumn, originalRow);
+        city->setOrganism(new Empty(city, originalColumn, originalRow), originalColumn, originalRow);
 
         //set the new position
         this->setPosition(columnIndex, rowIndex);
@@ -91,15 +91,17 @@ vector<Organism *> Human::getTargets()
             yIndex = this->y + currentRow;
 
             //check if they're off the map
-            if ((xIndex < 0 || xIndex > GRID_WIDTH) || (yIndex < 0 || yIndex > GRID_HEIGHT)){continue;}
-
-            //check if the spot is empty and if it is, add it to valid targets.
+            if ((xIndex < 0 || xIndex >= GRID_WIDTH) || (yIndex < 0 || yIndex >= GRID_HEIGHT)){continue;}
+            //if the spot is empty add it to valid targets.
             Organism* target = city->getOrganism(xIndex,yIndex);
-            if (typeid(target) == typeid(Empty)){validTargets.push_back(target);}
-        }//end nested
-    }//end for-loop
+            if (typeid(target) == typeid(Empty))
+            {
+                validTargets.push_back(target);
+            }
+        }
+    }
 
-    //return the list of valid locations to move to.
+
     return validTargets;
 }
 

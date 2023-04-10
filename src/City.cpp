@@ -38,10 +38,12 @@ void City::move() {
     {
         for (int currentColumn = 0; currentColumn < GRID_WIDTH; currentColumn++)
         {
-            if (grid[currentRow][currentColumn]->isTurn())
-            {
-                grid[currentRow][currentColumn]->move();
-            }
+            grid[currentRow][currentColumn]->move();
+
+//            if (!grid[currentRow][currentColumn]->isTurn())
+//            {
+//
+//            }
         }
     }
 }

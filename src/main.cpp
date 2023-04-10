@@ -21,8 +21,7 @@ int main() {
     while (true){
 
         city->move();
-//        cout << *city;
-//        cin >> test;
+        cout << *city;
     }
 
 //    chrono:: milliseconds interval(INTERVAL);

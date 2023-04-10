@@ -46,8 +46,11 @@ ostream &operator<<(ostream &output, Organism *organism)
     if (organism->getSpecies() == Organism::HUMAN){
         output << "\033[48;5;20m" << " h " << "\033[0m";
         return output;
-    } else{
+    } else if (organism->getSpecies() == Organism::ZOMBIE){
         output << "\033[38;5;16m" << "\033[48;5;22m" << " z " << "\033[0m";
+        return output;
+    } else{
+        output << "-";
         return output;
     }
 }

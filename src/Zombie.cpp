@@ -10,6 +10,7 @@ Zombie::Zombie(City *city, int width, int height) {
     this->width   = width;
     this->height  = height;
     this->species = ZOMBIE;
+    this->moved   = false;
 }
 
 Zombie::Zombie() {}
@@ -32,15 +33,16 @@ void Zombie::move()
         originalColumn = this->x;
         originalRow    = this->y;
 
-        //if it's a human space deallocate the human
-        if (target->getSpecies() == HUMAN || target->getSpecies() == EMPTY)
+        if (target->getSpecies() != ZOMBIE)
         {
-            this->city->setOrganism(new Empty(this->city, originalColumn, originalRow), originalColumn, originalRow);
+//            //free the targets memory
+//            delete[] target;
+            city->setOrganism(new Empty(city, originalColumn, originalRow), originalColumn, originalRow);
         }
 
 
         //move the zombie to the new space
-        this->city->setOrganism(this, gridColumn, gridRow);
+        city->setOrganism(this, gridColumn, gridRow);
 
 
 
@@ -78,14 +80,18 @@ vector<Organism *> Zombie::getTargets() {
             yIndex = this->y + currentRow;
 
             //check if they're off the map
-            if ((xIndex < 0 || xIndex > GRID_WIDTH) || (yIndex < 0 || yIndex > GRID_HEIGHT)){continue;}
+            if ((xIndex < 0 || xIndex >= GRID_WIDTH) || (yIndex < 0 || yIndex >= GRID_HEIGHT)){continue;}
 
             //check if the spot is empty or is a human and if it is, add it to valid targets. Also check for null.
             Organism* target = city->getOrganism(xIndex,yIndex);
-            if ((typeid(target) == typeid(Empty) || target->getSpecies() != ZOMBIE) && target != nullptr)
+            if (target != nullptr)
             {
-                validTargets.push_back(target);
+                if (target->getSpecies() != ZOMBIE)
+                {
+                    validTargets.push_back(target);
+                }
             }
+
         }//end nested
     }//end for-loop
 
