@@ -8,6 +8,8 @@
 
 
 class Empty : public Organism{
+private:
+    void endTurn() override;
 public:
     Empty(City *city, int width, int height);
     virtual ~Empty();

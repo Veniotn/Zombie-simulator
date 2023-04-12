@@ -15,3 +15,6 @@ Empty::Empty(City *city, int width, int height) {
 Empty::~Empty() {
 
 }
+
+void Empty::endTurn() {
+}

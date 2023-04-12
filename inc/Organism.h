@@ -18,11 +18,12 @@ protected:
     bool moved;
     City *city;
     int species;
-    enum {HUMAN,ZOMBIE,EMPTY};
+
 
     enum { WEST, NORTH, EAST, SOUTH, NUM_DIRECTIONS };
 
 public:
+    enum {HUMAN,ZOMBIE,EMPTY};
     Organism();
     Organism( City *city, int width, int height );
     virtual ~Organism();
@@ -36,8 +37,9 @@ public:
     int  getYPosition() const{return this->y;}
 
     void setPosition( int x, int y );
-    void endTurn();
-    bool isTurn();
+    virtual void endTurn();
+    bool hasMoved();
+    void setMoved(bool moved);
 
     friend ostream& operator<<( ostream &output, Organism *organism );
 };

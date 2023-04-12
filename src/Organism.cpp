@@ -7,9 +7,11 @@
 
 Organism::Organism()
 {
-
+    this->width = 0;
+    this->height = 0;
+    this->species = EMPTY;
+    this->moved = false;
 }
-
 Organism::Organism(City *city, int width, int height)
 {
     this->city = city;
@@ -25,24 +27,19 @@ void Organism::setPosition(int x, int y)
     this->y = y;
 }
 
-void Organism::endTurn()
-{
 
-    this->moved = true;
-}
 
-bool Organism::isTurn()
-{
+bool Organism::hasMoved() {
     return this->moved;
+}
+void Organism::setMoved(bool moved)
+{
+    this->moved = moved;
 }
 
 ostream &operator<<(ostream &output, Organism *organism)
 {
-    if (organism == nullptr)
-    {
-        cout << "nice";
-        exit(1);
-    }
+
     if (organism->getSpecies() == Organism::HUMAN){
         output << "\033[48;5;20m" << " h " << "\033[0m";
         return output;
@@ -50,23 +47,15 @@ ostream &operator<<(ostream &output, Organism *organism)
         output << "\033[38;5;16m" << "\033[48;5;22m" << " z " << "\033[0m";
         return output;
     } else{
-        output << "-";
+        output << "\033[47;5;16m" <<  " - " << "\033[0m";
         return output;
     }
 }
 
-Organism::~Organism()
-{
-
-}
-
-vector<Organism *> Organism::getTargets() {
-    return vector<Organism *>();
-}
-
-void Organism::move() {
-
-}
+Organism::~Organism() {}
+void Organism::endTurn() {}
+vector<Organism *> Organism::getTargets() {return vector<Organism *>();}
+void Organism::move() {}
 
 
 

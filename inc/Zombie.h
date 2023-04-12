@@ -5,6 +5,13 @@
 
 class Zombie : public Organism
 {
+private:
+    int daysToBreed, daysUntilStarved;
+    bool hasEaten;
+    void endTurn() override;
+    void breed();
+    void starve();
+    Organism* lookForHuman(vector<Organism*> validTargets);
 public:
     Zombie();
     Zombie( City *city, int width, int height );
@@ -12,6 +19,7 @@ public:
 
     void move() override;
     vector<Organism*> getTargets() override;
+
 };
 
 #endif
