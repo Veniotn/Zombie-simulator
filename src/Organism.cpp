@@ -3,6 +3,7 @@
 //
 
 #include "../inc/Organism.h"
+#include "../inc/GameSpecs.h"
 
 
 Organism::Organism()
@@ -29,7 +30,8 @@ void Organism::setPosition(int x, int y)
 
 
 
-bool Organism::hasMoved() {
+bool Organism::hasMoved()
+{
     return this->moved;
 }
 void Organism::setMoved(bool moved)
@@ -40,14 +42,17 @@ void Organism::setMoved(bool moved)
 ostream &operator<<(ostream &output, Organism *organism)
 {
 
-    if (organism->getSpecies() == Organism::HUMAN){
-        output << "\033[48;5;20m" << " h " << "\033[0m";
+    if (organism->getSpecies() == Organism::HUMAN)
+    {
+        output << "\033[48;5;" << HUMAN_COLOR << "m" << HUMAN_CHARACTER << "\033[0m";
         return output;
-    } else if (organism->getSpecies() == Organism::ZOMBIE){
-        output << "\033[38;5;16m" << "\033[48;5;22m" << " z " << "\033[0m";
+    } else if (organism->getSpecies() == Organism::ZOMBIE)
+    {
+        output << "\033[38;5;" << ZOMBIE_COLOR << "m" << "\033[48;5;22m" << ZOMBIE_CHARACTER << "\033[0m";
         return output;
-    } else{
-        output << "\033[47;5;16m" <<  " - " << "\033[0m";
+    } else
+    {
+        output << "\033[47;5;16m" <<  EMPTY_SPACE << "\033[0m";
         return output;
     }
 }

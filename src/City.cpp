@@ -61,6 +61,7 @@ void City::move() {
     {
         for (int currentColumn = 0; currentColumn < GRID_WIDTH; currentColumn++)
         {
+            //if they havent moved yet move them
             if (!grid[currentRow][currentColumn]->hasMoved())
             {
                 grid[currentRow][currentColumn]->move();
@@ -151,12 +152,15 @@ ostream &operator<<(ostream &output, City &city) {
         }
         cout << "\n";
     }
-    cout << "Zombies: " << city.getZombiePopulation() << " Humans: " << city.getHumanPopulation() << endl;
 }
 
 
 
 //destructor
 City::~City() {
-
+    for (int cityRow = 0; cityRow < GRID_HEIGHT; cityRow++) {
+        for (int cityColumn = 0; cityColumn < GRID_WIDTH; cityColumn++) {
+            delete grid[cityRow][cityColumn];
+        }
+    }
 }

@@ -97,6 +97,7 @@ void Human::endTurn()
 {
     this->recruitCounter++;
 
+
     if (recruitCounter > HUMAN_BREED)
     {
         recruit();

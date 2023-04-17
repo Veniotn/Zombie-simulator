@@ -29,13 +29,8 @@ int main() {
         city->move();//includes all actions
 
 
-
-
-
-
-
-//        cout << "GENERATION " << city->getGeneration() << endl;
-//        cout << "HUMANS: " << city->countType(HUMAN_CH) << endl;
-//        cout << "ZOMBIES: " << city->countType(ZOMBIE_CH) << endl;
+          cout << "GENERATION " << city->getCurrentIteration() << endl;
+          cout << "HUMANS: " << city->getHumanPopulation() << endl;
+          cout << "ZOMBIES: " << city->getZombiePopulation() << endl;
     }//end while
 }//end main

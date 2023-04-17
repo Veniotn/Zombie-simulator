@@ -6,7 +6,7 @@
 class Zombie : public Organism
 {
 private:
-    int daysToBreed, daysUntilStarved;
+    int daysToBreed, daysHungry;
     bool hasEaten;
     void endTurn() override;
     void breed();

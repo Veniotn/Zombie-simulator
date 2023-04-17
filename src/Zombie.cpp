@@ -14,7 +14,7 @@ Zombie::Zombie(City *city, int width, int height) {
     this->moved   = false;
     this->hasEaten = false;
     this->daysToBreed = 0;
-    this->daysUntilStarved = 0;
+    this->daysHungry = 0;
 
 }
 
@@ -26,7 +26,7 @@ Zombie::Zombie() {
     this->moved = false;
     this->hasEaten = false;
     this->daysToBreed = 0;
-    this->daysUntilStarved = 0;
+    this->daysHungry = 0;
 
 }
 
@@ -71,16 +71,16 @@ void Zombie::endTurn()
 
     if (hasEaten)
     {
-        this->daysUntilStarved = 0;
+        this->daysHungry = 0;
         this->hasEaten = false;
     }
     else
     {
-        daysUntilStarved++;
+        daysHungry++;
     }
 
 
-    if (daysUntilStarved > ZOMBIE_STARVE)
+    if (daysHungry > ZOMBIE_STARVE)
     {
        starve();
     }

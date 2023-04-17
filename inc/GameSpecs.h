@@ -8,10 +8,7 @@ const int ZOMBIE_STARTCOUNT = 5; //initial Zombie count
 const int HUMAN_BREED = 3; // steps until an Human breeds
 const int ZOMBIE_BREED = 8; // steps until an Zombie breeds
 const int ZOMBIE_STARVE = 3; // steps until a Zombie starves and converts back
-const char HUMAN_CH = 111;//79 "o"// ascii Human
-const char SPACE_CH = 32; // " " ascii space
-const char ZOMBIE_CH = 90;//90 "Z"// ascii zombie
-const double INTERVAL = 200; // pause between steps
+const double INTERVAL = 20; // pause between steps
 const int ITERATIONS = 100; // max number of steps
 
 //Colors
@@ -25,7 +22,10 @@ const int ITERATIONS = 100; // max number of steps
 //7  = white regular		//16+ = solid blocks
 //8  = white pale
 
-const int HUMAN_COLOR = 3; // turquoise
-const int ZOMBIE_COLOR = 14; // bright yellow
+const int HUMAN_COLOR         = 20; // blue
+const int ZOMBIE_COLOR        = 16; //green
+const string HUMAN_CHARACTER  = " h ";
+const string ZOMBIE_CHARACTER = " z ";
+const string EMPTY_SPACE      = " - ";
 
 #endif

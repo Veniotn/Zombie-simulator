@@ -6,7 +6,6 @@
 #define INC_4_ZOMBIES_EMPTY_H
 #include "Organism.h"
 
-
 class Empty : public Organism{
 private:
     void endTurn() override;
